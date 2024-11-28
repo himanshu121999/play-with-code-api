@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const studentRoutes = require("./routes/studentRoutes");
 const todayClassRoutes = require("./routes/todayClassRoutes");
 const courseClassRoutes = require("./routes/classRoutes");
+const assignmentRoutes = require("./routes/assignmentRoutes");
 
 dotenv.config();
 const app = express();
@@ -27,6 +28,7 @@ mongoose
 app.use("/api/students", studentRoutes);
 app.use("/api/todays-classes", todayClassRoutes);
 app.use("/api/classes", courseClassRoutes);
+app.use("/api/assignments", assignmentRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
