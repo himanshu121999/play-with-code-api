@@ -8,7 +8,7 @@ const assignmentSchema = new mongoose.Schema({
     type: [
       {
         fileName: { type: String, required: true },
-        language: { type: String, required: true, enum: ["html", "css"] },
+        language: { type: String, required: true, enum: ["html", "css", "javascript"] },
         value: { type: String, default: "" },
       },
     ],
