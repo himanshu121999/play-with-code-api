@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+const languages = ["html", "css", "javascript"];
+
 const assignmentSchema = new mongoose.Schema({
   type: { type: String, required: true, enum: ["CODING", "TASK"] },
   title: { type: String, required: true },
@@ -8,7 +10,7 @@ const assignmentSchema = new mongoose.Schema({
     type: [
       {
         fileName: { type: String, required: true },
-        language: { type: String, required: true, enum: ["html", "css", "javascript"] },
+        language: { type: String, required: true, enum: languages },
         value: { type: String, default: "" },
       },
     ],
@@ -27,7 +29,7 @@ const assignmentSchema = new mongoose.Schema({
         files: [
           {
             fileName: { type: String, required: true },
-            language: { type: String, required: true, enum: ["html", "css"] },
+            language: { type: String, required: true, enum: languages },
             value: { type: String, required: true },
           },
         ],
